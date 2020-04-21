@@ -16,7 +16,7 @@ class Person {
     }
 }
 
-var dave = new Person("Dave", 40, true);
+let dave = new Person("Dave", 40, true);
 
 console.log(dave);
 
