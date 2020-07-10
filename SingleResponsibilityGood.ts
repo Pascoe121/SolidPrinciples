@@ -1,5 +1,5 @@
 //Example - Good
-class EmployeeSR {
+export class EmployeeSR {
     name: string;
     payPerHour: number;
     pensionContribution: number;
@@ -13,7 +13,7 @@ class EmployeeSR {
     }
 }
 
-class Payment {
+export class Payment {
     employee: EmployeeSR;
     hoursWorked: number;
     netPay: number;
@@ -44,7 +44,7 @@ class Payment {
     }
 }
 
-class payroll {
+export class Payroll {
     employee: EmployeeSR;
     payment: Payment;
 
@@ -61,5 +61,5 @@ class payroll {
 //Example - Good
 const bill = new EmployeeSR("Bill", 10, 10, 10);
 const billsPayment = new Payment(bill, 37);
-const employeePayroll = new payroll(bill, billsPayment);
+const employeePayroll = new Payroll(bill, billsPayment);
 employeePayroll.payEmployee();
