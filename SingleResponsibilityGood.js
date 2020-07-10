@@ -8,32 +8,41 @@ var EmployeeSR = /** @class */ (function () {
     }
     return EmployeeSR;
 }());
-var payment = /** @class */ (function () {
-    function payment(employee, hoursWorked) {
+var Payment = /** @class */ (function () {
+    function Payment(employee, hoursWorked) {
         this.employee = employee;
         this.hoursWorked = hoursWorked;
+        this.netPay = this.calculateNetPayment();
     }
-    payment.prototype.payEmployee = function () {
-        console.log(this.employee.name + "'s net payment was £" + this.calculateNetPayment() + "send payslip");
-    };
-    payment.prototype.calculateNetPayment = function () {
+    Payment.prototype.calculateNetPayment = function () {
         var grossPay = this.calculateGrossPayment();
         var pensionPayment = this.calculatePensionPayment(grossPay);
         var taxPayment = this.calculateTaxPayment(grossPay);
         return grossPay - pensionPayment - taxPayment;
     };
-    payment.prototype.calculateGrossPayment = function () {
+    Payment.prototype.calculateGrossPayment = function () {
         return this.employee.payPerHour * this.hoursWorked;
     };
-    payment.prototype.calculatePensionPayment = function (grossPay) {
+    Payment.prototype.calculatePensionPayment = function (grossPay) {
         return grossPay / this.employee.pensionContribution;
     };
-    payment.prototype.calculateTaxPayment = function (grossPay) {
+    Payment.prototype.calculateTaxPayment = function (grossPay) {
         return grossPay / this.employee.tax;
     };
-    return payment;
+    return Payment;
+}());
+var payroll = /** @class */ (function () {
+    function payroll(employee, payment) {
+        this.employee = employee;
+        this.payment = payment;
+    }
+    payroll.prototype.payEmployee = function () {
+        console.log(this.employee.name + "'s net payment was £" + this.payment.netPay + " send payslip");
+    };
+    return payroll;
 }());
 //Example - Good
 var bill = new EmployeeSR("Bill", 10, 10, 10);
-var billsPayment = new payment(bill, 37);
-billsPayment.payEmployee();
+var billsPayment = new Payment(bill, 37);
+var employeePayroll = new payroll(bill, billsPayment);
+employeePayroll.payEmployee();

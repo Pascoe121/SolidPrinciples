@@ -13,17 +13,15 @@ class EmployeeSR {
     }
 }
 
-class payment {
+class Payment {
     employee: EmployeeSR;
     hoursWorked: number;
+    netPay: number;
 
     constructor(employee: EmployeeSR, hoursWorked: number) {
         this.employee = employee;
         this.hoursWorked = hoursWorked;
-    }
-
-    payEmployee(): void {
-        console.log(this.employee.name + "'s net payment was £" + this.calculateNetPayment() + " send payslip");
+        this.netPay = this.calculateNetPayment();
     }
 
     calculateNetPayment(): number {
@@ -46,7 +44,22 @@ class payment {
     }
 }
 
+class payroll {
+    employee: EmployeeSR;
+    payment: Payment;
+
+    constructor(employee: EmployeeSR, payment: Payment) {
+        this.employee = employee;
+        this.payment = payment;
+    }
+
+    payEmployee(): void {
+        console.log(this.employee.name + "'s net payment was £" + this.payment.netPay + " send payslip");
+    }
+}
+
 //Example - Good
 const bill = new EmployeeSR("Bill", 10, 10, 10);
-const billsPayment = new payment(bill, 37);
-billsPayment.payEmployee();
+const billsPayment = new Payment(bill, 37);
+const employeePayroll = new payroll(bill, billsPayment);
+employeePayroll.payEmployee();
