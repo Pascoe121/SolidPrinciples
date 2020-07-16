@@ -1,6 +1,7 @@
 # SolidPrinciples
-#### To run
+#### To compile
 - npx tsc SingleResponsibilityGood.ts
+#### To run
 - node SingleResponsibilityGood.js
 #### To run tests
 - npm run test
