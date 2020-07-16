@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1594395638770" clover="3.2.0">
-  <project timestamp="1594395638771" name="All files">
+<coverage generated="1594900460603" clover="3.2.0">
+  <project timestamp="1594900460604" name="All files">
     <metrics statements="25" coveredstatements="25" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="8" elements="33" coveredelements="33" complexity="0" loc="25" ncloc="25" packages="1" files="1" classes="1">
-      <file name="SingleResponsibilityGood.ts" path="C:\Projects\SolidPrinciples\SingleResponsibilityGood.ts">
+      <file name="SingleResponsibilityGood.ts" path="C:\Projects\SolidPrinciples\SingleResponsibility\SingleResponsibilityGood.ts">
         <metrics statements="25" coveredstatements="25" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="8"/>
         <line num="2" count="1" type="stmt"/>
         <line num="6" count="8" type="stmt"/>
