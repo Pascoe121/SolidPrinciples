@@ -1,3 +1,5 @@
+"use strict";
+exports.__esModule = true;
 //Example - Good
 //Uses abstraction (PayPalPaymentProcessor & GooglePayPaymentProcessor) to ensure high-level modules (StoreGood)
 // do not depend on the low-level modules (PayPal, GooglePay)
@@ -11,6 +13,7 @@ var Store = /** @class */ (function () {
     };
     return Store;
 }());
+exports.Store = Store;
 //PayPalPaymentProcessor implements the PaymentProcessor interface and defines it specific pay implementation
 // calling through to PayPal with what it requires to make a payment in PayPal's case an item and amount in pennies
 var PayPalPaymentProcessor = /** @class */ (function () {
@@ -22,6 +25,7 @@ var PayPalPaymentProcessor = /** @class */ (function () {
     };
     return PayPalPaymentProcessor;
 }());
+exports.PayPalPaymentProcessor = PayPalPaymentProcessor;
 //GooglePayPaymentProcessor implements the PaymentProcessor interface and defines it specific pay implementation
 // calling through to GooglePay with what it requires to make a payment in this case a user an item and amount in pounds
 var GooglePayPaymentProcessor = /** @class */ (function () {
@@ -34,6 +38,7 @@ var GooglePayPaymentProcessor = /** @class */ (function () {
     };
     return GooglePayPaymentProcessor;
 }());
+exports.GooglePayPaymentProcessor = GooglePayPaymentProcessor;
 //PayPal has its own make payment implementation
 var PayPal = /** @class */ (function () {
     function PayPal(user) {

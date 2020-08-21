@@ -3,7 +3,7 @@
 //Uses abstraction (PayPalPaymentProcessor & GooglePayPaymentProcessor) to ensure high-level modules (StoreGood)
 // do not depend on the low-level modules (PayPal, GooglePay)
 //The store only has a contract withe the payment processor and not with the PayPal's or GooglePays implementation or possible future changes.
-class Store {
+export class Store {
     paymentProcessor: PaymentProcessor  
     constructor(paymentProcessor) {
         this.paymentProcessor = paymentProcessor
@@ -20,7 +20,7 @@ interface PaymentProcessor {
 
 //PayPalPaymentProcessor implements the PaymentProcessor interface and defines it specific pay implementation
 // calling through to PayPal with what it requires to make a payment in PayPal's case an item and amount in pennies
-class PayPalPaymentProcessor implements PaymentProcessor {
+export class PayPalPaymentProcessor implements PaymentProcessor {
     paypal: PayPal
     constructor(user) {
         this.paypal = new PayPal(user)
@@ -33,7 +33,7 @@ class PayPalPaymentProcessor implements PaymentProcessor {
 
 //GooglePayPaymentProcessor implements the PaymentProcessor interface and defines it specific pay implementation
 // calling through to GooglePay with what it requires to make a payment in this case a user an item and amount in pounds
-class GooglePayPaymentProcessor implements PaymentProcessor {
+export class GooglePayPaymentProcessor implements PaymentProcessor {
     googlePay: GooglePay
     user: string
     constructor(user) {
