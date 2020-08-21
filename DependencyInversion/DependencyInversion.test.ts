@@ -1,4 +1,4 @@
-import { Store, PayPalPaymentProcessor, GooglePayPaymentProcessor, PayPal, GooglePay} from './DependencyInversionGood';
+import { Store, PayPalPaymentProcessor, GooglePayPaymentProcessor} from './DependencyInversionGood';
 
 describe('Store', () => {
     it('purchaseItem should make a purchase with the correct payment service (PayPal)', async () => {
