@@ -1,14 +1,14 @@
-var SimplePrinterBad = /** @class */ (function () {
-    function SimplePrinterBad() {
+var SimpleOvenBad = /** @class */ (function () {
+    function SimpleOvenBad() {
     }
-    SimplePrinterBad.prototype.heatOven = function (temperature) {
+    SimpleOvenBad.prototype.heatOven = function (temperature) {
         //...
     };
-    SimplePrinterBad.prototype.runMircowave = function (duration, defrost) {
+    SimpleOvenBad.prototype.runMircowave = function (duration, defrost) {
         //...
     };
-    SimplePrinterBad.prototype.runClean = function () {
+    SimpleOvenBad.prototype.runClean = function () {
         //...
     };
-    return SimplePrinterBad;
+    return SimpleOvenBad;
 }());
