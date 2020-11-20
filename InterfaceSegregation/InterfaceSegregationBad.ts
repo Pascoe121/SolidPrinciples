@@ -7,7 +7,7 @@ interface OvenBad {
     runClean();
 }
 
-class SimplePrinterBad implements OvenBad {
+class SimpleOvenBad implements OvenBad {
     heatOven(temperature: number) {
         //...
     }
